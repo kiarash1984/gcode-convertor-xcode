@@ -328,9 +328,9 @@ class ViewController: NSViewController {
         convertedCode += "\(command.type)\((command.xValue == nil ? "" : " X\(command.xValue!)"))\((command.yValue == nil ? "" : " Y\(command.yValue!)"))\((command.zValue == nil ? "" : " Z\(command.zValue!)")) F \(translationSpeed)\n"
 
         
-        print("Converted Simple:")
+ //       print("Converted Simple:")
 
-        print("\(command.type)\((command.xValue == nil ? "" : " X\(command.xValue!)"))\((command.yValue == nil ? "" : " Y\(command.yValue!)"))\((command.zValue == nil ? "" : " Z\(command.zValue!)"))")
+ //       print("\(command.type)\((command.xValue == nil ? "" : " X\(command.xValue!)"))\((command.yValue == nil ? "" : " Y\(command.yValue!)"))\((command.zValue == nil ? "" : " Z\(command.zValue!)"))")
         
         if (command.xValue != nil) {
             currentX = command.xValue!
@@ -374,6 +374,10 @@ class ViewController: NSViewController {
             endPhi = -endPhi
         }
         */
+        
+        print("startPhi = \(startPhi * 180.0 / .pi)")
+        print("endPhi = \(endPhi * 180.0 / .pi)")
+        
         let radius = Point.calculateRadius(point: Point(xValue: Double(command.iValue!), yValue: Double(command.jValue!)))
         if Vector.checkIfConvertNecessary(vectorA: Vector(iValue: Double(currentX!), jValue: Double(currentY!)), vectorB: vectorB) == true {
             
